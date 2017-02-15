@@ -9,17 +9,15 @@ var avow = require('avow');
 //  Functional Declarations
 function FizzBuzz(n) {
     var output = '';
-    // output += 'foo';
-
-    for (var i = 0; i < 16; i++){
-        if (n % 3 === 0 && n % 5 !== 0) {
-            output += 'fizz';
+    for (var i = 1; i <= n; i++){
+        if (i % 3 === 0 && i % 5 === 0) {
+            output += 'FizzBuzz';
          }
-        else if (n % 5 === 0 && n % 3 !== 0) {
-            output +='buzz';
+        else if (i % 3 === 0) {
+            output +='Fizz';
         }
-        else if (output.length === 0) {
-            output += 'fizzbuzz';
+        else if (i % 5 === 0) {
+            output += 'Buzz';
         }
         else {
             output += '.';
@@ -29,7 +27,7 @@ function FizzBuzz(n) {
     return output;
 }
 
-
+FizzBuzz(15)
 
 // Tests (do not modify these)
 avow('FizzBuzz 1 should be .', '.' === FizzBuzz(1), '.', FizzBuzz(1));
